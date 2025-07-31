@@ -5,3 +5,5 @@ gunicorn
 Pillow
 djangorestframework
 django-cors-headers
+drf-yasg
+django-debug-toolbar

@@ -5,6 +5,7 @@ from inventory.serializers import ProductSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from drf_yasg.utils import swagger_auto_schema
 
 
 #views here 
@@ -19,6 +20,7 @@ class Products(APIView):
 
 
 class AddProduct(APIView):
+    @swagger_auto_schema(request_body=ProductSerializer)
     def post(self, request, *args, **kwargs):
                   serializer_product = ProductSerializer(data=request.data)
                   if serializer_product.is_valid() : 
